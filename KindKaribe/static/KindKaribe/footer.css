@@ -1,0 +1,196 @@
+@font-face{
+    font-family:"archia-regular";
+    src:url("https://dafonttop.com/wp-data/a/21/8021/file/Archia-Regular.otf") format("woff"),
+    url("https://dafonttop.com/wp-data/a/21/8021/file/Archia-Regular.otf") format("opentype"),
+    url("https://dafonttop.com/wp-data/a/21/8021/file/Archia-Regular.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'intro_script_demomedium';
+  src: url('./font/introscriptdemo-medium.woff2') format('woff2');
+  src: url('./font/introscriptdemo-medium.woff') format('woff');
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+.super-container{
+	margin-top: 100px;
+}
+
+
+footer{
+	margin-top:15px;
+	position: absolute;
+	/*background: #fcefd4;*/
+	background: #f0deb9;
+	padding:15px 0;
+	width:100%;
+}
+
+.footer-content{
+	margin-top: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.footer-content h1{
+	font-size: 3.5rem;
+	text-transform: capitalize;
+	font-family: 'intro_script_demomedium';
+	/*FONT INTRO SCRIPT DEMOMEDIUM*/
+	line-height: 3rem;
+}
+
+.footer-content p{
+	width:100%;
+	margin: 10px auto;
+	line-height: 28px;
+	font-size: 14px;
+	font-family: "archia-regular";
+	color: #2f2f2f;
+}
+
+.socials{
+	list-style: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #2f2f2f;
+}
+
+.socials li{
+	margin: 0 10px;
+}
+
+.socials a{
+	text-decoration: none;
+	color: #2f2f2f;
+	border: 1px solid #2f2f2f;
+	padding: 5px;
+	border-radius: 50%;
+}
+
+.socials a:hover{
+    text-decoration: none;
+    color: #2f2f2f;
+    border: 1px solid #f27da4;
+    transition: color .4s ease;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.socials a i{
+	font-size: 1.1rem;
+	width: 20px;
+	height: 30px;
+	transition: color .4s ease;
+}
+
+.socials a:hover i{
+	color: #f27da4;
+}
+
+.footer-bottom{
+    padding: 20px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.footer-bottom p{
+    float: left;
+    font-size: 14px;
+    font-family: "archia-regular";
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.footer-bottom p a{
+	color:#2f2f2f;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+.footer-bottom span{
+	text-transform: uppercase;
+	opacity: .4;
+	font-weight: 200;
+}
+.footer-menu{
+	margin-top:30px;
+    text-align: center;
+}
+
+.footer-menu ul{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.footer-menu ul li{
+	padding-right: 10px;
+	display: block;
+	font-family: "archia-regular";
+}
+
+.footer-menu ul li a{
+	color: #2f2f2f;
+	text-decoration: none;
+}
+
+.footer-menu ul li a:hover{
+	color: #2f2f2f;
+	font-weight: 999;
+}
+
+/*LOGO*/
+.dot-logo-footer {
+  height: 50px;
+  width: 50px;
+  background-color: #acd872;
+  border-radius: 50%;
+  font-size: 2.7rem;
+  z-index: 10000;
+  text-align: center;
+  font-family: 'intro_script_demomedium';
+  display: inline-block;
+  position: absolute;
+  margin-left: -40px;
+  margin-top: -10px;
+}
+
+.dotArancione-logo-footer{
+  margin-top: 14px;
+  margin-left: -12px;
+  height: 50px;
+  width: 50px;
+  background-color: #f27da4;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+}
+
+.testoLogo-footer
+{
+  font-family: 'intro_script_demomedium';
+  font-size: 2.7rem;
+}
+
+
+
+
+@media (max-width:568px) {
+.footer-menu ul{
+
+margin-top: 10px;
+margin-bottom: 20px;
+}
+
+
+}

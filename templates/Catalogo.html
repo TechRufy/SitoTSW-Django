@@ -1,0 +1,63 @@
+<html>
+<head>
+            {% load static %}
+<meta charset="utf-8">
+<link href="{% static 'KindKaribe/catalogo.css' %}" rel="stylesheet" type="text/css">
+<title>Catalogo prodotti</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+{% include 'header.html' %}
+
+
+	<div class="pasticceria">
+		<span class="titolo">La Pasticceria</span>
+	</div>
+
+	<div class="container">
+
+        {% for prodotto in prodottiPasticceria  %}
+		<div class="card">
+			<div class= "prova">
+			<a  id ="panino" href="#"><img class="image" id= "speriamo" src="{% static 'KindKaribe/Immagini/' %}{{ prodotto.URL }}"></a>
+    <span class="text">
+    <a href="#">
+    <ion-icon name="cart-outline" id="iconaCarrello" style="font-size: 1.75rem; color: #2f2f2f;  background-color: #fcefd4;">
+    </ion-icon></a></span>
+  </div>
+				
+			<div class="dettagli-card">
+				<div class="nome">{{prodotto.Prodotto.Nome}}</div>
+				<p>&euro; {{ prodotto.Prodotto.Prezzo }}</p>
+			</div>
+		</div>
+        {% endfor %}
+	</div>
+	
+	<script>
+	 $(document).ready(function () {
+		 
+        $(".prova").mouseover(function(){
+         $(this).find(".text").show()
+         var vari = $(this).children("#panino");
+       		vari.children("#speriamo").css("opacity","0.5").css("transition", ".3s ease")
+       		.css("border","3px solid #acd872");
+        	
+        });
+        
+        $(".prova").mouseout(function(){
+        	$(this).find(".text").hide()
+        	var vari = $(this).children("#panino");
+       		vari.children("#speriamo").css("opacity","1").css("transition", ".3s ease")
+       		.css("border","1px solid black");
+        	
+        });
+		 
+        
+     }) 
+	</script>
+
+    {% include 'footer.html' %}
+</body>
+</html>

@@ -17,3 +17,12 @@ class Catalogo(views.generic.ListView):
     def get_queryset(self):
         c = Immagine.objects.select_related("Prodotto")
         return c.filter(Prodotto__Tipo=Tipo.Pasticceria)
+
+
+class CatalogoG(views.generic.ListView):
+    template_name = "Catalogo.html"
+    context_object_name = "prodottiPasticceria"
+
+    def get_queryset(self):
+        c = Immagine.objects.select_related("Prodotto")
+        return c.filter(Prodotto__Tipo=Tipo.Vaschetta)

@@ -1,4 +1,4 @@
-<html>
+<html lang="it">
 <head>
             {% load static %}
 <meta charset="utf-8">
@@ -12,7 +12,7 @@
 
 
 	<div class="pasticceria">
-		<span class="titolo">La Pasticceria</span>
+		<span class="titolo">La Pasticceria</span>S
 	</div>
 
 	<div class="container">
@@ -20,13 +20,14 @@
         {% for prodotto in prodottiPasticceria  %}
 		<div class="card">
 			<div class= "prova">
-			<a  id ="panino" href="#"><img class="image" id= "speriamo" src="{% static 'KindKaribe/Immagini/' %}{{ prodotto.URL }}"></a>
+			<a  id ="panino" href="#"><img class="image" id= "speriamo" src="{% static 'KindKaribe/Immagini/' %}{{ prodotto.URL }}" alt=""></a>
     <span class="text">
     <a href="#">
-    <ion-icon name="cart-outline" id="iconaCarrello" style="font-size: 1.75rem; color: #2f2f2f;  background-color: #fcefd4;">
-    </ion-icon></a></span>
+        <ion-icon name="cart" id="iconaCarrello" style="font-size: 1.75rem; color: #2f2f2f;  background-color: #fcefd4;"></ion-icon>
+    </a>
+    </span>
   </div>
-				
+
 			<div class="dettagli-card">
 				<div class="nome">{{prodotto.Prodotto.Nome}}</div>
 				<p>&euro; {{ prodotto.Prodotto.Prezzo }}</p>
@@ -40,7 +41,7 @@
 		 
         $(".prova").mouseover(function(){
          $(this).find(".text").show()
-         var vari = $(this).children("#panino");
+         let vari = $(this).children("#panino");
        		vari.children("#speriamo").css("opacity","0.5").css("transition", ".3s ease")
        		.css("border","3px solid #acd872");
         	
@@ -48,7 +49,7 @@
         
         $(".prova").mouseout(function(){
         	$(this).find(".text").hide()
-        	var vari = $(this).children("#panino");
+        	let vari = $(this).children("#panino");
        		vari.children("#speriamo").css("opacity","1").css("transition", ".3s ease")
        		.css("border","1px solid black");
         	
@@ -57,7 +58,7 @@
         
      }) 
 	</script>
-
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
     {% include 'footer.html' %}
 </body>
 </html>

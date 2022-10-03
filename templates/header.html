@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 
 <head>
     {% load static%}
     <link rel="stylesheet" type="text/css" href="{% static 'KindKaribe/stili.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title></title>
 
 </head>
 
@@ -22,14 +23,14 @@
             
             function mostraElemento(data){
             	if(data.length > 0) {
-            		$("#prova").empty(); //svuoto la div perchè in questo modo si toglie quello che avevo cercato prima
+            		$("#prova").empty(); //svuoto la div perché in questo modo si toglie quello che avevo cercato prima
             		$("#prova").show();
             		
             		data.forEach(e => {
-						var myvar = '<a href="CreaCatalogo?action=details&id='+e.id+'">'+
+						let myvar = '<a href="CreaCatalogo?action=details&id='+e.id+'">'+
 									'<div style=" width:200px; background-color:#fcefd4; right: 50px; z-index:"9999">'+
 									'<h2 class="titolo-ricerca">'+e.nome+'</h2></a>'
-									+ '<a href="CreaCatalogo?action=details&id='+e.id+'"><img class="immagine-ricerca" src="./immagini/'+e.pathImage[0]+'">'+
+									+ '<a href="CreaCatalogo?action=details&id='+e.id+'"><img class="immagine-ricerca" src="./immagini/'+e.pathImage[0]+'" alt="">'+
 										'</a></div><hr style="color: #2f2f2f; ">';
 						
 						$("#prova").append(myvar);
@@ -68,7 +69,7 @@
 			})
             
 			$("#cerca").click(function(){
-				//preferire classe css .active e quando clicchi fai toggleClass
+				//Preferire classe css. Active e quando clicchi fai toggleClass
 				//valoreRicerca è il form
 			
 				$("#valoreRicerca").toggleClass("nascondi");

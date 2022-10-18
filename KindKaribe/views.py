@@ -15,8 +15,14 @@ class Catalogo(views.generic.ListView):
     context_object_name = "prodottiPasticceria"
 
     def get_queryset(self):
-        c = Immagine.objects.select_related("Prodotto")
-        return c.filter(Prodotto__Tipo=Tipo.Pasticceria)
+        c = Prodotto.objects.all()
+        for prodotto in c:
+            imm = prodotto.immagine_set
+            for roba in imm.all():
+                prodotto.__setattr__("immag", roba)
+
+        print(c[0].immagine_set.all().first().URL.removeprefix("%20"))
+        return c.filter(Tipo=Tipo.Pasticceria)
 
 
 class CatalogoG(views.generic.ListView):
@@ -24,5 +30,11 @@ class CatalogoG(views.generic.ListView):
     context_object_name = "prodottiPasticceria"
 
     def get_queryset(self):
-        c = Immagine.objects.select_related("Prodotto")
-        return c.filter(Prodotto__Tipo=Tipo.Vaschetta)
+        c = Prodotto.objects.all()
+        for prodotto in c:
+            imm = prodotto.immagine_set
+            for roba in imm.all():
+                prodotto.__setattr__("immag", roba)
+
+        print(c[0].immag.URL)
+        return c.filter(Tipo=Tipo.Vaschetta)

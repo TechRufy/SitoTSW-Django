@@ -11,8 +11,9 @@
 {% include 'header.html' %}
 
 
+
 	<div class="pasticceria">
-		<span class="titolo">La Pasticceria</span>S
+		<span class="titolo">La Pasticceria</span>
 	</div>
 
 	<div class="container">
@@ -20,7 +21,7 @@
         {% for prodotto in prodottiPasticceria  %}
 		<div class="card">
 			<div class= "prova">
-			<a  id ="panino" href="#"><img class="image" id= "speriamo" src="{% static 'KindKaribe/Immagini/' %}{{ prodotto.URL }}" alt=""></a>
+			<a  id ="panino" href="#"><img class="image" id= "speriamo" src="{% static 'KindKaribe/Immagini/' %}{{ prodotto.immagine_set.all.first.URL }}" alt=""></a>
     <span class="text">
     <a href="#">
         <ion-icon name="cart" id="iconaCarrello" style="font-size: 1.75rem; color: #2f2f2f;  background-color: #fcefd4;"></ion-icon>
@@ -29,8 +30,8 @@
   </div>
 
 			<div class="dettagli-card">
-				<div class="nome">{{prodotto.Prodotto.Nome}}</div>
-				<p>&euro; {{ prodotto.Prodotto.Prezzo }}</p>
+				<div class="nome">{{prodotto.Nome}} </div>
+				<p>&euro; {{ prodotto.Prezzo }}</p>
 			</div>
 		</div>
         {% endfor %}

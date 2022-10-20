@@ -73,3 +73,4 @@ class Immagine(models.Model):
     URL = models.CharField(max_length=200, default="default.jpg")
     testoALT = models.CharField(max_length=200, default="ALT")
     Prodotto = models.ForeignKey(Prodotto, on_delete=models.CASCADE)
+
